@@ -13,8 +13,8 @@
   -moz-osx-font-smoothing: grayscale;
 
   /* Theme Variables */
-  --primary-blue: #0056b3;
-  --dark-blue: #002d5a;
+  --primary-blue: #0046ad;
+  --primary-red: #d32f2f;
   --white: #ffffff;
   --light-gray: #f8f9fa;
   --text-dark: #333333;
@@ -26,6 +26,8 @@ body {
   place-content: center;
   min-width: 320px;
   min-height: 100vh;
+  background-color: var(--white);
+  color: var(--text-dark);
 }
 
 #root {
@@ -50,100 +52,175 @@ body {
 
 /* Page Components */
 .page {
-  padding: 4rem 0;
+  padding: 5rem 0;
 }
 
 h1,
 h2,
 h3 {
-  color: var(--dark-blue);
+  color: var(--primary-blue);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.text-red {
+  color: var(--primary-red);
+}
+
+/* Premium UI Elements */
+.bg-gradient {
+  background: linear-gradient(135deg, var(--primary-blue) 0%, #002d5a 100%);
+  color: var(--white);
+}
+
+.card-premium {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 2.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.card-premium:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* Media Placeholders */
+.media-placeholder {
+  position: relative;
+  background: #eee;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed #ccc;
+  min-height: 200px;
+  width: 100%;
+  margin: 1.5rem 0;
+}
+
+.media-placeholder::after {
+  content: 'Place Image/Video Here';
+  color: #999;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+.video-frame {
+  aspect-ratio: 16 / 9;
+  background: #000;
+  border: 4px solid var(--primary-red);
+}
+
+.photo-frame {
+  aspect-ratio: 4 / 3;
 }
 
 /* Buttons */
 .btn {
   display: inline-block;
-  padding: 0.75rem 1.5rem;
-  border-radius: 4px;
-  font-weight: 600;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-weight: 700;
   text-decoration: none;
   cursor: pointer;
-  transition: all 0.3s;
+  transition: all 0.3s ease;
   border: none;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.9rem;
 }
 
 .btn-primary {
   background-color: var(--primary-blue);
   color: var(--white);
+  box-shadow: 0 4px 15px rgba(0, 70, 173, 0.3);
 }
 
 .btn-primary:hover {
-  background-color: var(--dark-blue);
+  background-color: var(--primary-red);
+  box-shadow: 0 6px 20px rgba(211, 47, 47, 0.4);
+  transform: scale(1.05);
 }
 
-/* Home Page */
+/* Home Page Enhancements */
 .hero {
-  background-color: var(--light-gray);
-  padding: 6rem 0;
+  background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('https://via.placeholder.com/1920x1080');
+  background-size: cover;
+  background-position: center;
+  padding: 8rem 0;
   text-align: center;
 }
 
 .hero h1 {
-  font-size: 3.5rem;
-  margin-bottom: 1rem;
-}
-
-.hero p {
-  font-size: 1.25rem;
-  margin-bottom: 2rem;
-  color: #666;
+  font-size: 4rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.1;
 }
 
 .highlights {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  margin-top: -3rem;
-  margin-bottom: 4rem;
+  gap: 2.5rem;
+  margin-top: -5rem;
+  margin-bottom: 5rem;
 }
 
-.highlight-card {
-  background: var(--white);
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  border-top: 4px solid var(--primary-blue);
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+  .hero {
+    padding: 5rem 1rem;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero p.text-red {
+    font-size: 1.5rem !important;
+  }
+
+  .page {
+    padding: 3rem 0;
+  }
+
+  .grid-2 {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .container {
+    padding: 0 1.5rem;
+  }
+
+  .highlight-card {
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .btn {
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 0.8rem 1.5rem;
+  }
 }
 
-/* Services Page */
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  margin-top: 3rem;
-}
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
 
-.service-item {
-  padding: 2rem;
-  background: var(--light-gray);
-  border-radius: 8px;
-  transition: transform 0.3s;
-}
+  h2 {
+    font-size: 1.5rem;
+  }
 
-.service-item:hover {
-  transform: translateY(-5px);
-}
-
-.service-icon {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
-
-/* Location Page */
-.location-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-  margin-top: 3rem;
+  .schedule-card {
+    padding: 1rem;
+  }
 }
 
 .map-placeholder {

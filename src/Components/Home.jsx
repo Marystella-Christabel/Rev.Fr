@@ -5,23 +5,43 @@ const Home = () => {
         <div className="page home">
             <section className="hero">
                 <div className="container">
-                    <h1>Welcome to Rev. Fr Emmanuel Chibuzor Obimma</h1>
-                    <p>Your premier destination for professional services and expertise.</p>
-                    <button className="btn btn-primary">Learn More</button>
+                    <div className="grid-2">
+                        <div style={{ textAlign: 'left' }}>
+                            <h1 style={{ color: 'var(--primary-blue)', marginBottom: '0.5rem' }}>Rev. Fr Emmanuel Chibuzor Obimma</h1>
+                            <div className="text-red" style={{ fontSize: '2rem', fontWeight: '800', marginBottom: '1.5rem', lineHeight: '1.2' }}>Ebube Muonso</div>
+                            <p style={{ fontSize: '1.2rem', marginBottom: '2rem' }}>A beacon of hope, deliverance, and spiritual growth in the Onitsha Archdiocese, Anambra State.</p>
+                            <a href="/services" className="btn btn-primary">View Ministry Schedule</a>
+                        </div>
+                        <div className="media-placeholder video-frame">
+                            {/* Placeholder for Ebube Muonso introduction video */}
+                        </div>
+                    </div>
                 </div>
             </section>
-            <section className="highlights container">
+
+            <section className="highlights container" style={{ marginTop: '-4rem' }}>
                 <div className="highlight-card">
-                    <h3>Our Expertise</h3>
-                    <p>We provide top-notch professional services tailored to your needs.</p>
+                    <h3>Parish Priest</h3>
+                    <p>Faithfully serving as the Parish Priest of <strong>Blessed Iwene Tansi Parish, Umudioka</strong>.</p>
+                    <div className="media-placeholder photo-frame" style={{ marginTop: '1.5rem', minHeight: '150px' }}></div>
                 </div>
                 <div className="highlight-card">
-                    <h3>Global Reach</h3>
-                    <p>Connecting with clients and locations across the region.</p>
+                    <h3>The Ministry</h3>
+                    <p>Founder of <strong>Holy Ghost Fraternity</strong>, a global adoration ministry in Uke, Anambra.</p>
+                    <div className="media-placeholder photo-frame" style={{ marginTop: '1.5rem', minHeight: '150px' }}></div>
                 </div>
                 <div className="highlight-card">
-                    <h3>Reliable Support</h3>
-                    <p>Always here to help you with your queries and requirements.</p>
+                    <h3>14+ Years of Grace</h3>
+                    <p>Over 14 years of transformative ministry since 2011, touching lives through the power of the Holy Spirit.</p>
+                    <div className="media-placeholder photo-frame" style={{ marginTop: '1.5rem', minHeight: '150px' }}></div>
+                </div>
+            </section>
+
+            <section className="container" style={{ padding: '4rem 0' }}>
+                <h2 style={{ textAlign: 'center', marginBottom: '3rem' }}>Ministry in Action</h2>
+                <div className="grid-2">
+                    <div className="media-placeholder video-frame"></div>
+                    <div className="media-placeholder photo-frame"></div>
                 </div>
             </section>
         </div>

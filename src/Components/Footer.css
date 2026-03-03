@@ -1,9 +1,10 @@
 .footer {
-    background-color: #002d5a;
-    color: #ffffff;
+    background-color: var(--primary-blue);
+    color: var(--white);
     padding: 2rem 0;
     text-align: center;
     margin-top: auto;
+    border-top: 5px solid var(--primary-red);
 }
 
 .footer-links {
